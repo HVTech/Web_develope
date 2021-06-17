@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+* {
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+body {
+    background-color: rgb(101, 233, 226);
+}
+
+.container {
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 3px solid lightcyan;
+    margin: auto;
+}
+
+.lk {
+    border-radius: 5px;
+    border: 2px solid greenyellow;
+    text-decoration: none;
+}
+
+.lk:hover {
+    transition: 500ms;
+    background-color: rgb(172, 184, 170);
+}
+
+.A {
+    text-decoration: none;
+}
