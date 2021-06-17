@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <div class="container">
         <form id="form-login" class="form-login">
             <div class="title">
@@ -24,9 +25,12 @@
                 <input type="password" placeholder="Nhập mật khẩu" id="password" />
             </div>
 
-            <input type="submit" class="btn" value="Đăng nhập" />
+            <div id="webcam-container"></div>
+            <div id="label-container"></div>
+
+            <input type="submit" class="btn" value="Đăng nhập"/>
             <p>Hoặc</p>
-            <input type="button" class="btn-register" value="Đăng Ký" onclick="note()" />
+            <input type="button" class="btn-register" value="Đăng nhập bằng hinh ảnh" onclick='window.location="index1.html"' />
         </form>
 
 
@@ -36,12 +40,15 @@
     <img src="img/log.svg" alt="" class="img">
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
     <script>
         const form = document.getElementById('form-login');
         const username = document.getElementById('username');
         const password = document.getElementById('password');
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', e => 
+        {
             e.preventDefault();
             checkInputs();
         });
@@ -49,21 +56,27 @@
         function checkInputs() {
             const user_Value = username.value.trim();
             const pass_value = password.value.trim();
-            if(user_Value === 'KHMT1'){
+            if(user_Value === 'KHMT1')
+            {
                 var array_name = ["nvv","pvd","ntt"];
                 var check = false;
-                for(var i = 0;i<array_name.length;i++){
-                    if(pass_value === array_name[i]){
+                for(var i = 0;i<array_name.length;i++)
+                {
+                    if(pass_value === array_name[i])
+                    {
                         check = true;
                         run(pass_value);
                         return ;
                     }
                 }
-                if(check === false){
+                if(check === false)
+                {
                     alert("Không tìm thấy tài khoản");
                 }
                 alert(string);
-            }else{
+            }
+            else
+            {
                 alert("Sai tài khoản hoặc mật khẩu");
             }
             
@@ -76,7 +89,7 @@
         function note() {
             alert('Hệ thống đang phát triển');
         }
-    </script>
+
 </body>
 
 </html>
