@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+    <link rel="stylesheet" href="CSS/upup.css">
+</head>
+
+<body>
+    <form class="form" id="myForm">
+        <div class="header">
+            <h2>Submit file</h2>
+        </div>
+        <input type="file" id="inpFile"><br>
+        <button type="submit" id="cl" class="btn">Uploads</button>
+    </form>
+    <script>
+        const myForm = document.getElementById('myForm');
+        const inpFile = document.getElementById('inpFile');
+        myForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const endpoint = "upload.php";
+            const formData = new FormData();
+            console.log(inpFile.files);
+            formData.append('inpFile', inpFile.files[0]);
+            fetch(endpoint, {
+                method: "post",
+                body: formData
+            }).catch(console.error);
+
+            alert("đã gửi file thành công");
+            window.location = "result.html";
+
+        });
+    </script>
+</body>
+
+</html>

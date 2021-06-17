@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Coder</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form-login" class="form-login">
+            <div class="title">
+                <h2>Đăng nhập</h2>
+            </div>
+            <div class="form-control">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Tên tài khoản" id="username" />
+            </div>
+            <div class="form-control">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Nhập mật khẩu" id="password" />
+            </div>
+
+            <input type="submit" class="btn" value="Đăng nhập" />
+            <p>Hoặc</p>
+            <input type="button" class="btn-register" value="Đăng Ký" onclick="note()" />
+        </form>
+
+
+
+    </div>
+
+    <img src="img/log.svg" alt="" class="img">
+
+
+
+    <script>
+        const form = document.getElementById('form-login');
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            checkInputs();
+        });
+
+        function checkInputs() {
+            const user_Value = username.value.trim();
+            const pass_value = password.value.trim();
+            if(user_Value === 'KHMT1'){
+                var array_name = ["nvv","pvd","ntt"];
+                var check = false;
+                for(var i = 0;i<array_name.length;i++){
+                    if(pass_value === array_name[i]){
+                        check = true;
+                        run(pass_value);
+                        return ;
+                    }
+                }
+                if(check === false){
+                    alert("Không tìm thấy tài khoản");
+                }
+                alert(string);
+            }else{
+                alert("Sai tài khoản hoặc mật khẩu");
+            }
+            
+        }
+        function run(a){
+            window.location = "profile_" + a + ".html";
+        }
+        
+
+        function note() {
+            alert('Hệ thống đang phát triển');
+        }
+    </script>
+</body>
+
+</html>
